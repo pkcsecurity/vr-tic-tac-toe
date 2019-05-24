@@ -1,10 +1,11 @@
 import "aframe";
+import 'babel-polyfill';
 import "aframe-animation-component";
 import "aframe-particle-system-component";
 import { Entity, Scene } from "aframe-react";
 import React from "react";
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { color: "red" };
