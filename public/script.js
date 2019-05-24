@@ -48,7 +48,7 @@ function hasWon() {
       document
         .getElementById("winner")
         .setAttribute("text", "value: Blue Player Wins!; color:black");
-      setTimeout(resetBoard, 5000);
+      setTimeout(resetBoard, 4000);
     }
     if (
       p2row == 3 ||
@@ -60,13 +60,30 @@ function hasWon() {
       document
         .getElementById("winner")
         .setAttribute("text", "value: Green Player Wins!; color:black");
-      setTimeout(resetBoard, 5000);
+      setTimeout(resetBoard, 4000);
     } else {
       p1row = 0;
       p2row = 0;
       p1col = 0;
       p2col = 0;
     }
+  }
+}
+
+function isTied() {
+  var numSquaresClicked = 0;
+  for (var j = 0; j < 3; j++) {
+    for (var i = 0; i < 3; i++) {
+      if (board[j][i] != 0) {
+        numSquaresClicked++;
+      }
+    }
+  }
+  if(numSquaresClicked == 9) {
+    document
+    .getElementById("winner")
+    .setAttribute("text", "value: The Game is a Tie!; color:black")
+    setTimeout(resetBoard, 4000)
   }
 }
 
@@ -91,6 +108,7 @@ function clicked(box) {
         "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
       );
     hasWon();
+    isTied();
     console.log(board);
   }
   //player 2 is green and -1
@@ -111,6 +129,7 @@ function clicked(box) {
         "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
       );
     hasWon();
+    isTied();
     console.log(board);
   }
 }
