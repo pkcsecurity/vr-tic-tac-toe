@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Tic Tac Toe</title>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="script.js"></script>
@@ -14,12 +13,12 @@
         var commands = {
           ':color on square :square': function(color, square) {
             $('#commandList').append($('<div>').text(color + ' on square ' + square));
-            document.getElementById('lastvoicecommand').setAttribute("text", "value:last command: " + color + ' on square ' + square);
+            document.getElementById('lastvoicecommand').setAttribute("text", "value:last voice command: " + color + ' on square ' + square);
             if(square == "One" || square == 1 || square == 'one') {
               clicked('0,0');
               document.getElementById('0,0').emit('click');
             }
-            if(square == "two" || square == 2 || square == 'Two' || square == 'too' || square == 'Too' | square == 'tube') {
+            if(square == "two" || square == 2 || square == 'Two' || square == 'too' || square == 'Too' || square == 'tube' || square == 'to' ) {
               clicked('0,1');
               document.getElementById('0,1').emit('click');
             }
@@ -47,7 +46,7 @@
               clicked('2,1');
               document.getElementById('2,1').emit('click');
             }
-            if(square == "nine" || square == 9 || square == 'Nine') {
+            if(square == "nine" || square == 9 || square == 'Nine' || square == 'knot') {
               clicked('2,2');
               document.getElementById('2,2').emit('click');
             }
@@ -61,23 +60,28 @@
         annyang.start();
       }
     </script>
-</head>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.loaders.min.js"></script>
+  </head>
 
-<body onload="resetBoard()">
+  <body onload="resetBoard()">
     <a-scene>
-        <a-entity environment="preset: forest; groundColor: #445"></a-entity>
+      <a-assets>
+        <a-asset-item id="tank" src="/assets/cartoon_wood_tank/scene.gltf" />
+      </a-assets>
+
+      <a-entity environment="preset: forest; groundColor: #445"></a-entity>
 
         <a-entity position="0 0 1.5">
-            <a-camera>
-                <a-cursor>
-                </a-cursor>
-            </a-camera>
+          <a-camera>
+              <a-cursor>
+              </a-cursor>
+          </a-camera>
         </a-entity>
 
         <div id="commandList"></div>
         <a-entity position="2.8 3 -1" id="winner" text="value:Make your move!; color:black" height="1.5" width="4" scale="10 10 10"></a-entity>
         <a-entity position="-.0 2.74 -1" id="instructions" text="value:Say 'blue on square <num>'; color:black" height="1" width="4" scale="2 2 2"></a-entity>
-        <a-entity position="2.0 2.74 -1" id="lastvoicecommand" text="value:Last voice command; color:black" height="1" width="4" scale="2 2 2"></a-entity>
+        <a-entity position="2.0 2.74 -1" id="lastvoicecommand" text="value:last voice command:; color:black" height="1" width="4" scale="2 2 2"></a-entity>
         <!--top row-->
         <a-box color="tomato" position="-1 2.5 -2" height="0.5" width="0.5" depth="0.5" onclick="clicked('0,0')" id="0,0" animation="property: rotation; startEvents: click; from: 0 0 0; to: 360 90 90; dur: 1000" ></a-box>
         <a-entity position="0 2.4 -1.7" id="square1text" text="value:1; color:black" scale="2 2 2" ></a-entity>
@@ -103,4 +107,15 @@
     </a-scene>
 </body>
 
+      <a-entity
+        gltf-model="#tank"
+        position="3 0.5 -1.5"
+        scale="0.4 0.4 0.4"
+	      animation-mixer
+      >
+      </a-entity>
+
+      <a-light type="point" intensity=".8" position="0 6 6" />
+    </a-scene>
+  </body>
 </html>

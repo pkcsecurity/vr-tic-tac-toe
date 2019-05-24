@@ -1,22 +1,5 @@
-## aframe-react-boilerplate
+## VR TIC TAC TOE... WITH TAAAANNNNKKKSS!!
 
-Boilerplate for building virtual reality experiences with
-[A-Frame](https://aframe.io) and React with
-[aframe-react](https://github.com/ngokevin/aframe-react).
+`npm start` to launch the frontend on port 3000
 
-![aframe-react-boilerplate](https://cloud.githubusercontent.com/assets/674727/24401414/286adeec-1369-11e7-8c41-22810d22d8d0.png)
-
-### Installation
-
-To get started:
-
-```bash
-npm install
-npm start
-```
-
-To publish to GitHub Pages:
-
-```bash
-npm run publish
-```
+See the `/backend` directory for the backend :metal:
