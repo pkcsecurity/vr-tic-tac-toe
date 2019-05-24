@@ -25,7 +25,7 @@ cycler==0.10.0
 decorator==4.3.2
 Django==2.1.7
 django-tables2==2.0.6
-djangorestframework==3.8.2
+djangorestframework==3.9.1
 dnspython==1.16.0
 docutils==0.14
 Elixir==0.7.1
