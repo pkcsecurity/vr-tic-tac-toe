@@ -71,33 +71,25 @@ function hasWon() {
 }
 
 function clicked(box) {
-  var boxArr = box.split(",");
-  //player 1 is blue and 1
-  if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
-    document.getElementById(box).setAttribute("color", "dodgerblue");
-    board[boxArr[0]][boxArr[1]] = 1;
-    player1 = false;
-    document
-      .getElementById("winner")
-      .setAttribute(
-        "text",
-        "value: " + (player1 ? "Blue," : "Green, ") + " make your move!"
-      );
-    hasWon();
-    console.log(board);
-  }
-  //player 2 is green and -1
-  else if (board[boxArr[0]][boxArr[1]] == 0) {
-    document.getElementById(box).setAttribute("color", "green");
-    board[boxArr[0]][boxArr[1]] = -1;
-    player1 = true;
-    document
-      .getElementById("winner")
-      .setAttribute(
-        "text",
-        "value: " + (player1 ? "Blue," : "Green, ") + " make your move!"
-      );
-    hasWon();
-    console.log(board);
-  }
+    var boxArr = box.split(",")
+        //player 1 is blue and 1
+    if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
+        document.getElementById(box).setAttribute("color", "dodgerblue")
+        board[boxArr[0]][boxArr[1]] = 1
+        player1 = false
+        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
+        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
+        hasWon()
+        console.log((board))
+    }
+    //player 2 is green and -1
+    else if (board[boxArr[0]][boxArr[1]] == 0) {
+        document.getElementById(box).setAttribute("color", "green")
+        board[boxArr[0]][boxArr[1]] = -1
+        player1 = true
+        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
+        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
+        hasWon()
+        console.log(board)
+    }
 }
