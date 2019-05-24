@@ -1,38 +1,24 @@
 {
-  "name": "aframe-react-boilerplate",
-  "version": "3.0.1",
-  "description": "Boilerplate for building virtual reality experiences with A-Frame and React.",
-  "dependencies": {
-    "aframe": "^0.5.0",
-    "aframe-animation-component": "^3.2.5",
-    "aframe-extras.animation-mixer": "^6.0.0",
-    "aframe-particle-system-component": "^1.0.8",
-    "aframe-react": "^4.0.x",
-    "babel-polyfill": "^6.3.14",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-scripts": "0.9.5"
-  },
+  "name": "vr-tic-tac-toe",
+  "version": "1.0.0",
+  "description": "it is what it sounds like",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "publish": "npm run build && gh-pages -d build"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "aframe",
-    "react",
-    "vr",
-    "boilerplate",
-    "a-frame",
-    "mozvr",
-    "reactvr",
-    "aframe-react",
-    "webvr"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "gh-pages": "^0.12.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkcsecurity/vr-tic-tac-toe.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/pkcsecurity/vr-tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/pkcsecurity/vr-tic-tac-toe#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "morgan": "^1.9.1"
   }
 }
