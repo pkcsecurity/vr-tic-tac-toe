@@ -19,10 +19,6 @@
     "eject": "react-scripts eject",
     "publish": "npm run build && gh-pages -d build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ngokevin/aframe-react-boilerplate.git"
-  },
   "keywords": [
     "aframe",
     "react",
@@ -34,12 +30,7 @@
     "aframe-react",
     "webvr"
   ],
-  "author": "Kevin Ngo <kngo@mozilla.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ngokevin/aframe-react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/ngokevin/aframe-react-boilerplate#readme",
   "devDependencies": {
     "gh-pages": "^0.12.0"
   }
