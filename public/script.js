@@ -71,38 +71,58 @@ function hasWon() {
 }
 
 function clicked(box) {
-    var boxArr = box.split(",")
-        //player 1 is blue and 1
-    if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
-        document.getElementById(box).setAttribute("color", "dodgerblue")
-        board[boxArr[0]][boxArr[1]] = 1
-        player1 = false
-        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
-        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
-        hasWon()
-        console.log((board))
-    }
-    //player 2 is green and -1
-    else if (board[boxArr[0]][boxArr[1]] == 0) {
-        document.getElementById(box).setAttribute("color", "green")
-        board[boxArr[0]][boxArr[1]] = -1
-        player1 = true
-        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
-        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
-        hasWon()
-        console.log(board)
-    }
+  var boxArr = box.split(",");
+  //player 1 is blue and 1
+  if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
+    document.getElementById(box).setAttribute("color", "dodgerblue");
+    board[boxArr[0]][boxArr[1]] = 1;
+    player1 = false;
+    document
+      .getElementById("winner")
+      .setAttribute(
+        "text",
+        "value: " + (player1 ? "Blue," : "Green, ") + " make your move!"
+      );
+    document
+      .getElementById("instructions")
+      .setAttribute(
+        "text",
+        "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
+      );
+    hasWon();
+    console.log(board);
+  }
+  //player 2 is green and -1
+  else if (board[boxArr[0]][boxArr[1]] == 0) {
+    document.getElementById(box).setAttribute("color", "green");
+    board[boxArr[0]][boxArr[1]] = -1;
+    player1 = true;
+    document
+      .getElementById("winner")
+      .setAttribute(
+        "text",
+        "value: " + (player1 ? "Blue," : "Green, ") + " make your move!"
+      );
+    document
+      .getElementById("instructions")
+      .setAttribute(
+        "text",
+        "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
+      );
+    hasWon();
+    console.log(board);
+  }
 }
 
-(function() {
-  console.log('starting audio context')
+function audioHellscape() {
+  console.log("starting audio context");
   const context = new AudioContext();
   let maxAmp = 0.5;
   let minAmp = 0.3;
 
   // Here's where most of the work happens
   function processAudio(e) {
-    const light = document.getElementById('animated-light');
+    const light = document.getElementById("animated-light");
     const buffer = e.inputBuffer.getChannelData(0);
     const out = e.outputBuffer.getChannelData(0);
     let amp = 0;
@@ -110,7 +130,7 @@ function clicked(box) {
     // Iterate through buffer to get the max amplitude for this frame
     for (let i = 0; i < buffer.length; i++) {
       const loud = Math.abs(buffer[i]);
-      if(loud > amp) {
+      if (loud > amp) {
         amp = loud;
       }
       // write input samples to output unchanged
@@ -119,23 +139,22 @@ function clicked(box) {
     minAmp = Math.min(minAmp, amp);
     maxAmp = Math.max(maxAmp, amp);
     const scaledAmp = (amp - minAmp) / (maxAmp - minAmp);
-    light.setAttribute('intensity', scaledAmp);
+    light.setAttribute("intensity", scaledAmp);
     //console.log('amplitude ' + amp + ' scaled ' + scaledAmp);
   }
 
-  window.addEventListener('load',function() {
-    console.log('adding audio listeners')
+  window.addEventListener("load", function() {
+    console.log("adding audio listeners");
     // Add an audio element
-    const audio = document.getElementById('soundtrack');
-
+    const audio = document.getElementById("soundtrack");
 
     //audio.addEventListener('canplaythrough',function() {
-    console.log('audio canplaythrough')
+    console.log("audio canplaythrough");
     const node = context.createMediaElementSource(audio);
 
     // create a node that will handle the animation, but won't alter the audio
     // in any way
-    const processor = context.createScriptProcessor(0,1,1);
+    const processor = context.createScriptProcessor(0, 1, 1);
     processor.onaudioprocess = processAudio;
 
     // connect the audio element to the node responsible for the animation
@@ -148,4 +167,6 @@ function clicked(box) {
     audio.play();
     //});
   });
-})();
+}
+
+audioHellscape();
