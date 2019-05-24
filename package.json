@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/pkcsecurity/vr-tic-tac-toe#readme",
   "dependencies": {
-    "express": "^4.17.0",
-    "morgan": "^1.9.1"
+    "express": "^4.17.0"
   }
 }
