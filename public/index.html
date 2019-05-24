@@ -89,7 +89,9 @@
         <a-asset-item id="tank" src="/assets/cartoon_wood_tank/scene.gltf" />
       </a-assets>
 
-      <a-entity environment="preset: forest; groundColor: #445; skyColor: #000"></a-entity>
+      <a-entity
+        environment="preset: forest; groundColor: #445; skyColor: #000"
+      ></a-entity>
 
       <a-entity position="0 0 2.5">
         <a-camera> <a-cursor> </a-cursor> </a-camera>
@@ -268,10 +270,15 @@
         scale="2 2 2"
       ></a-entity>
 
-      <a-light id="animated-light" type="point" intensity=".8" position="0 6 6" />
+      <a-light
+        id="animated-light"
+        type="point"
+        intensity=".8"
+        position="0 6 6"
+      ></a-light>
       <!-- TANKS -->
       <a-entity
-        position="0 -6 -4"
+        position="0 0 0"
         rotation="0 0 0"
         animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 55000; easing: linear;"
       >
@@ -308,8 +315,12 @@
         >
         </a-entity>
       </a-entity>
-
     </a-scene>
-    <audio id="soundtrack" src="assets/video-game-blockbuster.mp3" autoplay loop></audio>
+    <audio
+      id="soundtrack"
+      src="assets/video-game-blockbuster.mp3"
+      autoplay
+      loop
+    ></audio>
   </body>
 </html>
