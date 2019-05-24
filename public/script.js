@@ -71,31 +71,52 @@ function hasWon() {
 }
 
 function clicked(box) {
-    var boxArr = box.split(",")
-        //player 1 is blue and 1
-    document.dispatchEvent(new Event('explosion'));
-    if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
-        document.getElementById(box).setAttribute("color", "dodgerblue")
-        board[boxArr[0]][boxArr[1]] = 1
-        player1 = false
-        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
-        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
-        hasWon()
-        console.log((board))
-    }
-    //player 2 is green and -1
-    else if (board[boxArr[0]][boxArr[1]] == 0) {
-        document.getElementById(box).setAttribute("color", "green")
-        board[boxArr[0]][boxArr[1]] = -1
-        player1 = true
-        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
-        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
-        hasWon()
-        console.log(board)
-    }
+  var boxArr = box.split(",");
+  document.dispatchEvent(new Event('explosion'));
+  //player 1 is blue and 1
+  if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
+    document.getElementById(box).setAttribute("color", "dodgerblue");
+    board[boxArr[0]][boxArr[1]] = 1;
+    player1 = false;
+    document
+      .getElementById("winner")
+      .setAttribute(
+        "text",
+        "value: " + (player1 ? "Blue," : "Green, ") + " make your move!"
+      );
+    document
+      .getElementById("instructions")
+      .setAttribute(
+        "text",
+        "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
+      );
+    hasWon();
+    console.log(board);
+  }
+  //player 2 is green and -1
+  else if (board[boxArr[0]][boxArr[1]] == 0) {
+    document.getElementById(box).setAttribute("color", "green");
+    board[boxArr[0]][boxArr[1]] = -1;
+    player1 = true;
+    document
+      .getElementById("winner")
+      .setAttribute(
+        "text",
+        "value: " + (player1 ? "Blue," : "Green, ") + " make your move!"
+      );
+    document
+      .getElementById("instructions")
+      .setAttribute(
+        "text",
+        "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
+      );
+    hasWon();
+    console.log(board);
+  }
 }
 
-(function() {
+function audioHellscape() {
+
   let lastExplosion = +new Date();
   let light;
   document.addEventListener('explosion', function() {
@@ -110,8 +131,10 @@ function clicked(box) {
   window.addEventListener('load',function() {
     light = document.getElementById('animated-light');
     updateLighting();
-    document.addEventListener('click', function() {
+    document.addEventListener('click', function () {
       document.getElementById('soundtrack').play();
     })
   });
-})();
+}
+
+audioHellscape();
