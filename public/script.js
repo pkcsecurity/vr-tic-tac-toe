@@ -73,6 +73,7 @@ function hasWon() {
 function clicked(box) {
     var boxArr = box.split(",")
         //player 1 is blue and 1
+    document.dispatchEvent(new Event('explosion'));
     if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
         document.getElementById(box).setAttribute("color", "dodgerblue")
         board[boxArr[0]][boxArr[1]] = 1
@@ -95,57 +96,22 @@ function clicked(box) {
 }
 
 (function() {
-  console.log('starting audio context')
-  const context = new AudioContext();
-  let maxAmp = 0.5;
-  let minAmp = 0.3;
-
-  // Here's where most of the work happens
-  function processAudio(e) {
-    const light = document.getElementById('animated-light');
-    const buffer = e.inputBuffer.getChannelData(0);
-    const out = e.outputBuffer.getChannelData(0);
-    let amp = 0;
-
-    // Iterate through buffer to get the max amplitude for this frame
-    for (let i = 0; i < buffer.length; i++) {
-      const loud = Math.abs(buffer[i]);
-      if(loud > amp) {
-        amp = loud;
-      }
-      // write input samples to output unchanged
-      out[i] = buffer[i];
-    }
-    minAmp = Math.min(minAmp, amp);
-    maxAmp = Math.max(maxAmp, amp);
-    const scaledAmp = (amp - minAmp) / (maxAmp - minAmp);
-    light.setAttribute('intensity', scaledAmp);
-    //console.log('amplitude ' + amp + ' scaled ' + scaledAmp);
+  let lastExplosion = +new Date();
+  let light;
+  document.addEventListener('explosion', function() {
+    lastExplosion = +new Date();
+  });
+  function updateLighting() {
+    const timeSinceExplosion = new Date() - lastExplosion;
+    const intensity = Math.max(1 - (timeSinceExplosion / 500), 0.3);
+    light.setAttribute('intensity', intensity);
+    setTimeout(updateLighting, 50);
   }
-
   window.addEventListener('load',function() {
-    console.log('adding audio listeners')
-    // Add an audio element
-    const audio = document.getElementById('soundtrack');
-
-
-    //audio.addEventListener('canplaythrough',function() {
-    console.log('audio canplaythrough')
-    const node = context.createMediaElementSource(audio);
-
-    // create a node that will handle the animation, but won't alter the audio
-    // in any way
-    const processor = context.createScriptProcessor(0,1,1);
-    processor.onaudioprocess = processAudio;
-
-    // connect the audio element to the node responsible for the animation
-    node.connect(processor);
-
-    // connect the "animation" node to the output
-    processor.connect(context.destination);
-
-    // play the sound
-    audio.play();
-    //});
+    light = document.getElementById('animated-light');
+    updateLighting();
+    document.addEventListener('click', function() {
+      document.getElementById('soundtrack').play();
+    })
   });
 })();
