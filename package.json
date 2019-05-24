@@ -18,8 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "publish": "npm run build && gh-pages -d build",
-    "heroku-prebuild":"rm yarn.lock"
+    "publish": "npm run build && gh-pages -d build"
   },
   "keywords": [
     "aframe",
