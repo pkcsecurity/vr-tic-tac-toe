@@ -71,6 +71,7 @@ function clicked(box) {
         board[boxArr[0]][boxArr[1]] = 1
         player1 = false
         document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
+        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
         hasWon()
         console.log((board))
     }
@@ -80,6 +81,7 @@ function clicked(box) {
         board[boxArr[0]][boxArr[1]] = -1
         player1 = true
         document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
+        document.getElementById('instructions').setAttribute("text", "value: say '" + (player1 ? 'blue' : 'green') + " on square <num>'");
         hasWon()
         console.log(board)
     }
