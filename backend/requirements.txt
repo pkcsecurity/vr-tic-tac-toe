@@ -78,7 +78,6 @@ PyPDF2==1.26.0
 pyrsistent==0.14.11
 python-dateutil==2.8.0
 python-slugify==1.2.6
-pytuya==7.0.2
 pytz==2018.5
 requests==2.21.0
 retrying==1.3.3
