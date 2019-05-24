@@ -27,6 +27,7 @@ class Board:
         self.squares = [None] * 9
         self.next_player = 'X'
         self.win_state = None
+        self.last_clicked = None
 
     def advance_next_player(self):
         if self.next_player == 'X':
@@ -51,6 +52,7 @@ class Board:
         if self.squares[square] is not None:
             return False, "A piece is already at that space."
         self.squares[square] = player
+        self.last_clicked = square
         self.advance_next_player()
         self.check_end_conditions()
         return True, "Success"
@@ -58,6 +60,7 @@ class Board:
     def json(self):
         return {
             'board': self.squares,
+            'last_clicked': self.last_clicked,
             'next_player': self.next_player,
             'winning_player': self.win_state
         }
