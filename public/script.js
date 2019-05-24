@@ -11,13 +11,12 @@ function resetBoard() {
             document.getElementById(`${i},${j}`).setAttribute("color","tomato")
         }
     }
-    document.getElementById('winner').setAttribute("text", "value: No one has won yet")
+    document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
     board = [
         [0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]
     ]
-
 }
 
 function hasWon() {
@@ -44,12 +43,12 @@ function hasWon() {
 
         if (p1row == 3 || p1col==3 || board[0][0]+board[1][1]+board[2][2]==3||board[0][2]+board[1][1]+board[2][0]==3) {
             console.log("p1 win")
-            document.getElementById('winner').setAttribute("text", "value: Player 1 wins!; color:black")
+            document.getElementById('winner').setAttribute("text", "value: Blue Player Wins!; color:black")
             setTimeout(resetBoard,5000)
         }
         if (p2row == 3 || p2col == 3 || board[0][0]+board[1][1]+board[2][2] == -3||board[0][2]+board[1][1]+board[2][0] == -3) {
             console.log("p2 win")
-            document.getElementById('winner').setAttribute("text", "value: Player 2 wins!; color:black")
+            document.getElementById('winner').setAttribute("text", "value: Green Player Wins!; color:black")
             setTimeout(resetBoard,5000)
             
         }
@@ -71,6 +70,7 @@ function clicked(box) {
         document.getElementById(box).setAttribute("color", "dodgerblue")
         board[boxArr[0]][boxArr[1]] = 1
         player1 = false
+        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
         hasWon()
         console.log((board))
     }
@@ -79,6 +79,7 @@ function clicked(box) {
         document.getElementById(box).setAttribute("color", "green")
         board[boxArr[0]][boxArr[1]] = -1
         player1 = true
+        document.getElementById('winner').setAttribute("text", "value: " + (player1 ? 'Blue,' : 'Green, ') + " make your move!");
         hasWon()
         console.log(board)
     }
