@@ -120,6 +120,9 @@ function audioHellscape() {
   let lastExplosion = +new Date();
   let light;
   document.addEventListener('explosion', function() {
+    const explosionSound = document.getElementById('explosion-sound');
+    explosionSound.currentTime = 0;
+    explosionSound.play();
     lastExplosion = +new Date();
   });
   function updateLighting() {
