@@ -1,0 +1,468 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 3165,
+      "max": [
+        297.99472045898438,
+        102.63249206542969,
+        432.899658203125
+      ],
+      "min": [
+        -297.99472045898438,
+        -57.278457641601562,
+        -444.67453002929688
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 37980,
+      "componentType": 5126,
+      "count": 3165,
+      "max": [
+        1,
+        0.99997276067733765,
+        0.99997246265411377
+      ],
+      "min": [
+        -1,
+        -0.99997246265411377,
+        -0.99997276067733765
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 3165,
+      "max": [
+        1,
+        0.99999791383743286,
+        0.99999475479125977,
+        1
+      ],
+      "min": [
+        -1,
+        -0.99997246265411377,
+        -0.99999922513961792,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 3165,
+      "max": [
+        0.99511700868606567,
+        0.99724602699279785
+      ],
+      "min": [
+        0.0028919999022036791,
+        0.0043950080871582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 25320,
+      "componentType": 5126,
+      "count": 3165,
+      "max": [
+        0.99511700868606567,
+        0.99724602699279785
+      ],
+      "min": [
+        0.0028919999022036791,
+        0.0043950080871582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 6174,
+      "max": [
+        3164
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 75960,
+      "componentType": 5126,
+      "count": 68,
+      "max": [
+        23.79286003112793,
+        64.30999755859375,
+        317.28253173828125
+      ],
+      "min": [
+        -23.79286003112793,
+        25.677663803100586,
+        159.96115112304688
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 76776,
+      "componentType": 5126,
+      "count": 68,
+      "max": [
+        0.87476253509521484,
+        0.94509822130203247,
+        0.47186779975891113
+      ],
+      "min": [
+        -0.87476253509521484,
+        0.48150962591171265,
+        -0.23068560659885406
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 50640,
+      "componentType": 5126,
+      "count": 68,
+      "max": [
+        0.70830965042114258,
+        0.72623986005783081,
+        0.75217956304550171,
+        -1
+      ],
+      "min": [
+        0.40563175082206726,
+        -0.81875967979431152,
+        0.39010173082351685,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 50640,
+      "componentType": 5126,
+      "count": 68,
+      "max": [
+        0.9770510196685791,
+        0.9778749942779541
+      ],
+      "min": [
+        0.023041000589728355,
+        0.023926019668579102
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 24696,
+      "componentType": 5125,
+      "count": 186,
+      "max": [
+        67
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "PactorDK (https://sketchfab.com/PactorDK)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/3f4b89d9dcc043f2aa6959dc1de516a2",
+      "title": "F-22 Raptor"
+    },
+    "generator": "Sketchfab-4.1.5",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 25440,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 51184,
+      "byteOffset": 25440,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 77592,
+      "byteOffset": 76624,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 51728,
+      "byteOffset": 154216,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 205944,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "extensionsUsed": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "images": [
+    {
+      "uri": "textures/MI_SKV_US_Jet_Fighter_diffuse.png"
+    },
+    {
+      "uri": "textures/MI_SKV_US_Jet_Fighter_specularGlossiness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "diffuseTexture": {
+            "index": 0,
+            "texCoord": 0
+          },
+          "glossinessFactor": 0.047568284600000003,
+          "specularFactor": [
+            0.050000000000000003,
+            0.050000000000000003,
+            0.050000000000000003
+          ],
+          "specularGlossinessTexture": {
+            "index": 1,
+            "texCoord": 0
+          }
+        }
+      },
+      "name": "MI_SKV_US_Jet_Fighter"
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "glossinessFactor": 0.047568284600000003,
+          "specularFactor": [
+            0.050000000000000003,
+            0.050000000000000003,
+            0.050000000000000003
+          ]
+        }
+      },
+      "name": "M_SKV_US_Jet_Fighter_glass"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "null_MI_SKV_US_Jet_Fighter_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "null_M_SKV_US_Jet_Fighter_glass_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6,
+            "TANGENT": 8,
+            "TEXCOORD_0": 9
+          },
+          "indices": 10,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "F-22 Raptor.fbx"
+    },
+    {
+      "children": [
+        4,
+        6
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        -0.59919427968073591,
+        -0.26439394606056488,
+        -0.75568648028425556,
+        0,
+        -0.16426888680278326,
+        0.96441476621136568,
+        -0.20717116484214509,
+        0,
+        0.7835700019950087,
+        -5.5511151231257827e-17,
+        -0.62130351035024867,
+        0,
+        690.09521484375,
+        345.04238891601562,
+        874.70782470703125,
+        1
+      ],
+      "name": "CINEMA_4D_Editor"
+    },
+    {
+      "name": ""
+    },
+    {
+      "children": [
+        7
+      ],
+      "name": "F_22_Raptor"
+    },
+    {
+      "children": [
+        8
+      ],
+      "name": "Null"
+    },
+    {
+      "children": [
+        9,
+        10
+      ],
+      "name": "null"
+    },
+    {
+      "mesh": 0,
+      "name": "null_MI_SKV_US_Jet_Fighter_0"
+    },
+    {
+      "mesh": 1,
+      "name": "null_M_SKV_US_Jet_Fighter_glass_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
+

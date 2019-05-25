@@ -87,6 +87,7 @@
     <a-scene>
       <a-assets>
         <a-asset-item id="tank" src="/assets/cartoon_wood_tank/scene.gltf" />
+        <a-asset-item id="f22" src="/assets/f-22_raptor/scene.gltf" />
       </a-assets>
 
       <a-entity
@@ -297,6 +298,21 @@
           rotation="0 0 0"
           scale="0.4 0.4 0.4"
           animation-mixer
+        >
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+              position="0 0 2"
+              rotation="0 0 0"
+              animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
+      >
+        <a-entity
+                gltf-model="#f22"
+                position="-40 15 0"
+                rotation="0 0 -45"
+                scale="0.01 0.01 0.01"
+                animation-mixer
         >
         </a-entity>
       </a-entity>
