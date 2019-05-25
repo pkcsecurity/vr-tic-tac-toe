@@ -1,6 +1,8 @@
 var player1 = true;
 var board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 
+let lastExplosion = +new Date();
+
 function resetBoard() {
   for (var i = 0; i < 3; i++) {
     for (var j = 0; j < 3; j++) {
@@ -79,17 +81,20 @@ function isTied() {
       }
     }
   }
-  if(numSquaresClicked == 9) {
+  if (numSquaresClicked == 9) {
     document
-    .getElementById("winner")
-    .setAttribute("text", "value: The Game is a Tie!; color:black")
-    setTimeout(resetBoard, 4000)
+      .getElementById("winner")
+      .setAttribute("text", "value: The Game is a Tie!; color:black");
+    setTimeout(resetBoard, 4000);
   }
 }
 
 function clicked(box) {
+  const explosionSound = document.getElementById("explosion-sound");
+  explosionSound.currentTime = 0;
+  explosionSound.play();
+  lastExplosion = +new Date();
   var boxArr = box.split(",");
-  document.dispatchEvent(new Event('explosion'));
   //player 1 is blue and 1
   if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
     document.getElementById(box).setAttribute("color", "dodgerblue");
@@ -135,27 +140,24 @@ function clicked(box) {
 }
 
 function audioHellscape() {
-
-  let lastExplosion = +new Date();
   let light;
-  document.addEventListener('explosion', function() {
-    const explosionSound = document.getElementById('explosion-sound');
-    explosionSound.currentTime = 0;
-    explosionSound.play();
-    lastExplosion = +new Date();
-  });
   function updateLighting() {
     const timeSinceExplosion = new Date() - lastExplosion;
-    const intensity = Math.max(1 - (timeSinceExplosion / 500), 0.3);
-    light.setAttribute('intensity', intensity);
-    setTimeout(updateLighting, 50);
+    const intensity = Math.max(1 - timeSinceExplosion / 500, 0.3);
+    light.setAttribute("intensity", intensity);
+    setTimeout(updateLighting, 75);
   }
-  window.addEventListener('load',function() {
-    light = document.getElementById('animated-light');
+  window.addEventListener("load", function() {
+    light = document.getElementById("animated-light");
     updateLighting();
-    document.addEventListener('click', function () {
-      document.getElementById('soundtrack').play();
-    })
+    document.addEventListener("click", function() {
+      document.getElementById("soundtrack").play();
+    });
+    document.addEventListener("touchdown", function() {
+      const explosionSound = document.getElementById("explosion-sound");
+      explosionSound.currentTime = 0;
+      explosionSound.play();
+    });
   });
 }
 
