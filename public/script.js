@@ -153,11 +153,6 @@ function audioHellscape() {
     document.addEventListener("click", function() {
       document.getElementById("soundtrack").play();
     });
-    document.addEventListener("touchdown", function() {
-      const explosionSound = document.getElementById("explosion-sound");
-      explosionSound.currentTime = 0;
-      explosionSound.play();
-    });
   });
 }
 
