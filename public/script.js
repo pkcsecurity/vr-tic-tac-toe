@@ -94,7 +94,6 @@ function clicked(box) {
   explosionSound.currentTime = 0;
   explosionSound.play();
   lastExplosion = +new Date();
-
   var boxArr = box.split(",");
   //player 1 is blue and 1
   if (player1 && board[boxArr[0]][boxArr[1]] == 0) {
@@ -146,13 +145,18 @@ function audioHellscape() {
     const timeSinceExplosion = new Date() - lastExplosion;
     const intensity = Math.max(1 - timeSinceExplosion / 500, 0.3);
     light.setAttribute("intensity", intensity);
-    setTimeout(updateLighting, 100);
+    setTimeout(updateLighting, 75);
   }
   window.addEventListener("load", function() {
     light = document.getElementById("animated-light");
     updateLighting();
     document.addEventListener("click", function() {
       document.getElementById("soundtrack").play();
+    });
+    document.addEventListener("touchdown", function() {
+      const explosionSound = document.getElementById("explosion-sound");
+      explosionSound.currentTime = 0;
+      explosionSound.play();
     });
   });
 }
