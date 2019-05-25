@@ -107,8 +107,8 @@ function clicked(box) {
         "text",
         "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
       );
-    hasWon();
     isTied();
+    hasWon();
     console.log(board);
   }
   //player 2 is green and -1
@@ -128,8 +128,8 @@ function clicked(box) {
         "text",
         "value: say '" + (player1 ? "blue" : "green") + " on square <num>'"
       );
-    hasWon();
     isTied();
+    hasWon();
     console.log(board);
   }
 }
