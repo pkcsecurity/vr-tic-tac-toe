@@ -2,8 +2,6 @@
 
 `npm start` to launch the frontend on port 3000
 
-See the `/backend` directory for the backend :metal:
-
 
 ### Asset attributions:
 Kagelok - cartoon wood tank
